@@ -1,16 +1,15 @@
 import chess
-# import sunfish
 import math
 import random
 import  sys
 
-
 def minimax_root(depth, board,is_maximizing):
     possible_moves = board.legal_moves
-    best_move = -9999
+    best_move = -9999  # the best possible scenario
     second_best = -9999
     third_best = -9999
     best_move_final = None
+
     for x in possible_moves:
         move = chess.Move.from_uci(str(x))
         board.push(move)
